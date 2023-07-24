@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="img/icon.png" rel="shortcut icon"/>
+  <title>Simple form</title>
+  <link rel="stylesheet" href="login.css">
+  <script>
+    function validateform() {
+      var name = document.myform.name.value;
+      var password = document.myform.password.value;
+      if (name == null || name == "") {
+        alert("Name can't be blank");
+        return false;
+      } else if (password.length < 6) {
+        alert("Password must be at least 6 characters long.");
+        return false;
+      }
+    }
+  </script>
+  <style>
+  body  {
+      background-image: url("img/farcry.jpg");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+  }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1 style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Join the Community<img src="img/gwlogo.png" height="100" width=""></h1>
+
+    </header>
+
+
+    <form name="myform" method="post" action="login.jsp" onsubmit="return validateform()">
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="name"><br/>
+
+      <label for="password">Password:</label>
+      <input type="password" name="password" id="password"><br/>
+      <input type="submit" value="Login">
+    </form>
+  </div>
+</body>
+</html>
